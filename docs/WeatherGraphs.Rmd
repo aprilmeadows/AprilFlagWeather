@@ -1,0 +1,45 @@
+---
+title: "AprilFlagWeather Graphs"
+author: "April Meadows"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+Load packages here:
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(lubridate)
+library(AprilFlagWeather)
+library(ggplot2)
+```
+
+```{r}
+# load in Flagstaff Weather data from AprilFlagWeather
+data("Flagstaff_Weather")
+```
+
+```{r}
+# create subdataframe for data in August 1960
+Flagstaff_Weather_Aug_1960 <- Flagstaff_Weather %>%
+  filter(year(DATE)==1960 & month(DATE)==08)
+
+# graph the maximum recorded temperature for the days in August 1960
+ggplot(Flagstaff_Weather_Aug_1960, aes(x=DATE,y=TMAX,group=1)) + geom_line() + theme(axis.text.x = element_text(angle = 70, hjust = 1))
+
+```
+
+```{r}
+# graph the maximum and minimum recorded temperature for the days in August 1960
+ggplot(Flagstaff_Weather_Aug_1960, aes(x=DATE,group=1)) +
+  geom_line(aes(y=TMAX,color="Max Temp")) +
+  geom_line(aes(y=TMIN,color="Min Temp")) +
+  theme(axis.text.x = element_text(angle = 70, hjust = 1)) +
+  ylab("Temperature") + xlab("Date")
+```
+
+```{r}
+# Test out the FizzBuzz function
+FizzBuzz(20)
+FizzBuzz(0) # should return an error message
+```
+

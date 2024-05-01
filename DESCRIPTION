@@ -1,0 +1,22 @@
+Package: AprilFlagWeather
+Version: 0.1
+Date: 2024-04-30
+Title: Data of Flagstaff's Weather
+Authors@R: c(person("April", "Meadows", role = c("aut", "cre"),
+                     email = "april.e.meadows@gmail.com"))
+Author: April Meadows [aut, cre]
+Maintainer: April Meadows <april.e.meadows@gmail.com>
+Depends: R (>= 3.1.0), nlme
+Suggests: 
+    MASS,
+    testthat (>= 3.0.0)
+Description: This package contains nearly 70 years worth
+    of weather data recorded at Pulliam Airport in Flagstaff,
+    Arizona. This data can be used to analyze precipitation
+    levels and temperatures in Flagstaff from 1950-2019. It
+    also contains a FizzBuzz game checker.
+License: GPL (>= 2)
+URL: https://github.com/aprilmeadows
+BugReports: https://github.com/aprilmeadows
+RoxygenNote: 7.3.1
+Config/testthat/edition: 3
